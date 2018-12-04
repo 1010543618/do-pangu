@@ -1,0 +1,22 @@
+{
+  "name": "do-pangu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "scripts": {
+    "test": "",
+    "build": "rollup -c -w ./src/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "remark": "^10.0.1",
+    "remark-pangu": "^1.0.1",
+    "semver": "^5.6.0",
+    "signale": "^1.3.0",
+    "yargs-parser": "^11.1.1"
+  },
+  "devDependencies": {
+    "rollup": "^0.67.4"
+  }
+}
