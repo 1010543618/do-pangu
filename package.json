@@ -1,14 +1,13 @@
 {
   "name": "do-pangu",
   "version": "1.0.0",
-  "description": "",
-  "main": "cli.js",
+  "description": "一个使用 remark-pangu 格式化 Markdown 文件和文件名的插件。",
   "scripts": {
     "test": "",
     "build": "rollup -c -w ./src/*.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "remark": "^10.0.1",
     "remark-pangu": "^1.0.1",
@@ -18,5 +17,23 @@
   },
   "devDependencies": {
     "rollup": "^0.67.4"
-  }
+  },
+  "bin": {
+    "do-pangu": "index.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1010543618/do-pangu.git"
+  },
+  "keywords": [
+    "pangu",
+    "format"
+  ],
+  "bugs": {
+    "url": "https://github.com/1010543618/do-pangu/issues"
+  },
+  "homepage": "https://github.com/1010543618/do-pangu#readme"
 }
