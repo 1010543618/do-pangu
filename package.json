@@ -21,7 +21,7 @@
     "rollup": "^0.67.4"
   },
   "bin": {
-    "do-pangu": "index.js"
+    "do-pangu": "./bin/index.js"
   },
   "directories": {
     "test": "test"
