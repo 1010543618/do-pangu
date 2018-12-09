@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
@@ -110,4 +111,4 @@ for (const key in args) {
 
 opts = Object.assign(defaultOpts, userOpts);
 doPangu(opts);
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.map
