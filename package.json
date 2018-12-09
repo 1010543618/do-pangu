@@ -4,7 +4,9 @@
   "description": "一个使用 remark-pangu 格式化 Markdown 文件和文件名的插件。",
   "scripts": {
     "test": "",
-    "build": "rollup -c -w ./src/*.js"
+    "build": "rollup -c -w ./src/*.js",
+    "publish-cmd": "git tag v%npm_package_version% && git push --tags",
+    "publish-bash": "git tag $npm_package_version"
   },
   "author": "",
   "license": "MIT",
