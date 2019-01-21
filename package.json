@@ -1,6 +1,6 @@
 {
   "name": "do-pangu",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "一个使用 remark-pangu 格式化 Markdown 文件和文件名的插件。",
   "scripts": {
     "start": "rollup -c -w ./src/*.js",
