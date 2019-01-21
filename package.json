@@ -21,9 +21,7 @@
   "devDependencies": {
     "rollup": "^0.67.4"
   },
-  "bin": {
-    "do-pangu": "index.js"
-  },
+  "bin": "./bin/index.js",
   "directories": {
     "test": "test"
   },
