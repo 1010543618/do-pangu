@@ -15,9 +15,10 @@ yarn:
 # 使用
 
 1.  首先确保您的项目使用了 Git 进行版本控制
-2.  使用 `do-pangu [options]` 命令格式化 Markdown 文件和文件名.
+2.  使用 `do-pangu [options]` 命令格式化 Markdown 文件和文件名
 
 # 选项
 
--   `-S`, `--onlyStagedFiles`   (默认) 只格式化 Git 暂存区的`.md`文件.
--   `-C`, `--allCachedFiles`    格式化 Git 控制的全部`.md`文件.
+-   `-S`, `--onlyStagedFiles`   （默认）只格式化 Git 暂存区的`.md`文件
+-   `-C`, `--allCachedFiles`    格式化 Git 控制的全部`.md`文件
+-   `-y`, `--assumeyes` 	    将设定所有的提问（是否修改排？是否将修改排版的文件添加到暂存？）设为确定

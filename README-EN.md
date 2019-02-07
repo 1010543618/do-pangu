@@ -23,3 +23,4 @@ or using yarn:
 
 -   `-S`, `--onlyStagedFiles`   (defualt) Only formatting staged files.
 -   `-C`, `--allCachedFiles`    Formatting all cached files.
+-   `-y`, `--assumeyes`         Assume yes; assume that the answer to any question which would be asked is yes.

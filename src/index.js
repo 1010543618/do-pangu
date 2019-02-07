@@ -13,7 +13,8 @@ if (semver.satisfies(nodeVersion, '<6.5')) {
 const args = yParser(process.argv.slice(2));
 const aliasMap = {
     'S': 'onlyStagedFiles', // default
-    'C': 'allCachedFiles'
+    'C': 'allCachedFiles',
+    'y': 'assumeyes'
 };
 const defaultOpts = {
     'onlyStagedFiles': true
