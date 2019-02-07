@@ -6,8 +6,7 @@
     "start": "rollup -c -w ./src/*.js",
     "test": "",
     "build": "rollup -c",
-    "publish-cmd": "git tag v%npm_package_version% && git push --tags",
-    "publish-bash": "git tag $npm_package_version && git push --tags"
+    "prepublish": "git push --tag"
   },
   "author": "",
   "license": "MIT",
