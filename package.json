@@ -6,7 +6,7 @@
     "start": "rollup -c -w ./src/*.js",
     "test": "",
     "build": "rollup -c",
-    "prepublish": "git push --tag"
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "MIT",
