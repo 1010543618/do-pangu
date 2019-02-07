@@ -9,7 +9,7 @@ export default opts => {
 
   const root = process.cwd();
 
-  let do_pangu_list = [];
+  let do_pangu_list = [], renamed_list = [];
 
   // 选择md文件
   console.log('待处理文件：');
@@ -22,9 +22,6 @@ export default opts => {
       .forEach(d => {
         /\.md$/.test(path.extname(d)) && do_pangu_list.push(d) && console.log(d);
       });
-    if(!do_pangu_list.length){
-      console.log('暂存区无 Markdown 文件');
-    }
   } else if (opts.onlyStagedFiles) {
     let skip = false;
     execSync('git status -sz', {
@@ -48,6 +45,10 @@ export default opts => {
           skip = false;
         }
       });
+  }
+
+  if(!do_pangu_list.length){
+    console.log('暂存区无 Markdown 文件');
   }
 
   // 是否修改排版？
@@ -87,12 +88,15 @@ export default opts => {
                   },
                 })
                 .processSync(data),
-              file_name = remark()
+              file_name = String(remark()
                 .use(pangu)
-                .processSync(fname);
-
+                .processSync(fname)).trim() + '.md';
+                
             fs.writeFileSync(fpath, String(file_content));
-            fs.renameSync(fpath, path.resolve(fdir, String(file_name).trim() + '.md'));
+            if(file_name !== fname){
+              renamed_list.push(file_name);
+              fs.renameSync(fpath, path.resolve(fdir, ));
+            }
           });
           res();
         })
@@ -117,7 +121,8 @@ export default opts => {
     .then(
       () =>
         new Promise((res, rej) => {
-          do_pangu_list.length && execSync(`git add ${do_pangu_list.join(' ')}`, {
+          let l = do_pangu_list.concat(renamed_list);
+          l.length && execSync(`git add ${l.map(d => `"${d}"`).join(' ')}`, {
             encoding: 'utf8',
           });
           // 0成功

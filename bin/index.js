@@ -18,7 +18,7 @@ var doPangu = opts => {
 
   const root = process.cwd();
 
-  let do_pangu_list = [];
+  let do_pangu_list = [], renamed_list = [];
 
   // 选择md文件
   console.log('待处理文件：');
@@ -97,12 +97,15 @@ var doPangu = opts => {
                   },
                 })
                 .processSync(data),
-              file_name = remark()
+              file_name = String(remark()
                 .use(pangu)
-                .processSync(fname);
-
+                .processSync(fname)).trim() + '.md',
+              p_file = path.resolve(fdir, file_name);
             fs.writeFileSync(fpath, String(file_content));
-            fs.renameSync(fpath, path.resolve(fdir, String(file_name).trim() + '.md'));
+            if(file_name !== fname){
+              renamed_list.push(p_file);
+              fs.renameSync(fpath, p_file);
+            }
           });
           res();
         })
@@ -127,7 +130,8 @@ var doPangu = opts => {
     .then(
       () =>
         new Promise((res, rej) => {
-          do_pangu_list.length && execSync(`git add ${do_pangu_list.join(' ')}`, {
+          let l = do_pangu_list.concat(renamed_list);
+          l.length && execSync(`git add ${l.map(d => `"${d}"`).join(' ')}`, {
             encoding: 'utf8',
           });
           // 0成功
