@@ -18,7 +18,8 @@ var doPangu = opts => {
 
   const root = process.cwd();
 
-  let do_pangu_list = [], renamed_list = [];
+  let do_pangu_list = [],
+    renamed_list = [];
 
   // 选择md文件
   console.log('待处理文件：');
@@ -56,7 +57,7 @@ var doPangu = opts => {
       });
   }
 
-  if(!do_pangu_list.length){
+  if (!do_pangu_list.length) {
     console.log('暂存区无 Markdown 文件');
   }
 
@@ -97,12 +98,16 @@ var doPangu = opts => {
                   },
                 })
                 .processSync(data),
-              file_name = String(remark()
-                .use(pangu)
-                .processSync(fname)).trim() + '.md',
+              file_name =
+                String(
+                  remark()
+                    .use(pangu)
+                    .processSync(fname)
+                ).trim() + '.md',
               p_file = path.resolve(fdir, file_name);
+
             fs.writeFileSync(fpath, String(file_content));
-            if(file_name !== fname){
+            if (file_name !== fname) {
               renamed_list.push(p_file);
               fs.renameSync(fpath, p_file);
             }
@@ -131,9 +136,10 @@ var doPangu = opts => {
       () =>
         new Promise((res, rej) => {
           let l = do_pangu_list.concat(renamed_list);
-          l.length && execSync(`git add ${l.map(d => `"${d}"`).join(' ')}`, {
-            encoding: 'utf8',
-          });
+          l.length &&
+            execSync(`git add ${l.map(d => `"${d}"`).join(' ')}`, {
+              encoding: 'utf8',
+            });
           // 0成功
           signale$$1.success('do-pangu 成功');
           process.exit(0);
