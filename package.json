@@ -6,7 +6,8 @@
     "start": "rollup -c -w ./src/*.js",
     "test": "",
     "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "precommit": "npm run build"
   },
   "author": "",
   "license": "MIT",
@@ -21,9 +22,6 @@
     "rollup": "^0.67.4"
   },
   "bin": "./bin/index.js",
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1010543618/do-pangu.git"

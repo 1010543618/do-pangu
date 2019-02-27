@@ -1,7 +1,7 @@
 import yParser from 'yargs-parser';
 import signale from 'signale';
 import semver from 'semver';
-import doPangu from './do-pangu';
+import doPangu from './doPangu';
 
 // Node version check
 const nodeVersion = process.versions.node;

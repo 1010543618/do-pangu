@@ -1,6 +1,6 @@
 # do-pangu
 
-*It's useless for English speaking country.* @\_@
+_It's useless for English speaking country._ @\_@
 
 A utility for formatting your Markdown files using the [remark-pangu](https://github.com/VincentBel/remark-pangu).
 
