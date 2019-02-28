@@ -63,7 +63,8 @@ function panguFiles(filesPath) {
   const fs = require('fs');
   const path = require('path');
   const remark = require('remark');
-  const pangu = require('remark-pangu');
+  const remarkPangu = require('remark-pangu');
+  const pangu = require('pangu');
 
   const renamedFileList = [],
     ext = '.md';
@@ -72,13 +73,9 @@ function panguFiles(filesPath) {
       fdir = path.dirname(fpath),
       fcontent = fs.readFileSync(fpath),
       vfcontent = remark()
-        .use(pangu)
+        .use(remarkPangu)
         .processSync(fcontent),
-      vfname = String(
-        remark()
-          .use(pangu)
-          .processSync(fname)
-      ).trim(),
+      vfname = pangu.spacing(fname).trim(),
       vfpath = path.resolve(fdir, vfname + ext);
 
     fs.writeFileSync(fpath, String(vfcontent));
