@@ -1,3 +1,5 @@
+感觉没什么用，请使用 [remark-pangu/index.js at master · VincentBel/remark-pangu](https://github.com/VincentBel/remark-pangu/blob/master/index.js) + [remark/packages/remark-cli at master · remarkjs/remark](https://github.com/remarkjs/remark/tree/master/packages/remark-cli)
+
 # do-pangu
 
 一个使用 [remark-pangu](https://github.com/VincentBel/remark-pangu) 格式化 Markdown 文件和文件名的插件。
